@@ -23,7 +23,7 @@ app.post('/message', function (req, res) {
     const appUserId = req.body.appUser._id;
     console.log('app user id: ', appUserId);
 
-    if(req.body.trigger === 'message:appUser'){
+    if(req.body.trigger === 'conversation:start'){
         smooch.appUsers.sendMessage(appUserId, {
             type: 'text',
             text: 'Hello, Hone',
